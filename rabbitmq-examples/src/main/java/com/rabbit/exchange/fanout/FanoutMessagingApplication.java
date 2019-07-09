@@ -28,8 +28,8 @@ public class FanoutMessagingApplication {
     @Bean
     public ApplicationRunner runner(AmqpTemplate template, FanoutExchange fanout) {
         return args ->
-            template.convertAndSend(fanout.getName(), "",
-                new MyMessage(LocalDateTime.now(), "hello rabbit"));
+                template.convertAndSend(fanout.getName(), "",
+                        new MyMessage(LocalDateTime.now(), "hello rabbit"));
     }
 
 

@@ -16,7 +16,7 @@ import static com.rabbit.exchange.fanout.FanoutMessagingApplication.*;
 @Component
 public class Consumers {
 
-    private static final Logger LOGGER  = LoggerFactory.getLogger(Consumers.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Consumers.class);
 
     /**
      * two consumers for same queue, given messages will be delivered to one of them

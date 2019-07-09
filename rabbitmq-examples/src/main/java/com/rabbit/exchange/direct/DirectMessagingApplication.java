@@ -1,6 +1,7 @@
 package com.rabbit.exchange.direct;
 
-import org.springframework.amqp.core.*;
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;

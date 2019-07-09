@@ -24,7 +24,6 @@ public class TopicMessagingApplication {
     public static final String QUEUE3_ROUTING_KEY = "*.topic.*";
 
 
-
     public static void main(String[] args) {
         SpringApplication.run(TopicMessagingApplication.class, args);
     }
@@ -33,10 +32,10 @@ public class TopicMessagingApplication {
     @Bean
     public ApplicationRunner runner(AmqpTemplate template, TopicExchange topic) {
         return args -> {
-            template.convertAndSend(topic.getName(),"routing.topic.queue1",
+            template.convertAndSend(topic.getName(), "routing.topic.queue1",
                     new MyMessage(LocalDateTime.now(), "hello rabbit in queue1"));
 
-            template.convertAndSend(topic.getName(),"routing.topic.queue2",
+            template.convertAndSend(topic.getName(), "routing.topic.queue2",
                     new MyMessage(LocalDateTime.now(), "hello rabbit in queue2"));
         };
     }
@@ -88,6 +87,7 @@ public class TopicMessagingApplication {
 
     /**
      * it will start receiving all messages (which were targeted to either queue1 or queue2)
+     *
      * @param topic
      * @param myQueue3
      * @return
